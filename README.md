@@ -1,4 +1,12 @@
-FacebookComments
-================
+Facebook Comments
+=================
 
-[Bolt Extension] An extension to place Facebook comment threads on your site, when using &lt;code>{{ facebookcomments() }}&lt;/code> in your templates.
+The "Facebook Comments" extension inserts a Facebook comment thread
+in your templates. Use it by simply placing the following in your template:
+
+    {{ facebookcomments() }}
+
+To include the current page's title, pass it as a parameter:
+
+    {{ facebookcomments( record.title ) }}
+
