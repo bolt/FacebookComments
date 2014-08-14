@@ -29,6 +29,11 @@ class Extension extends \Bolt\BaseExtension
 
     }
 
+    public function getName()
+    {
+        return "Facebook Comments";
+    }
+
     function initialize()
     {
         // Nothing here.. Note: This extension defines the snippets and functions in getSnippets() and getFunctions()
