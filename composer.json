@@ -1,5 +1,5 @@
 {
-    "name": "bolt/FacebookComments",
+    "name": "bolt/facebookcomments",
     "description": "",
     "type": "bolt-extension",
     "keywords": [],
@@ -19,11 +19,6 @@
         ],
         "psr-4": {
             "FacebookComments\\": ""
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.7.*"
         }
     }
 }
