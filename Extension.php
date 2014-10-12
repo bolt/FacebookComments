@@ -1,7 +1,7 @@
 <?php
 // Facebook Like Extension for Bolt
 
-namespace FacebookComments;
+namespace Bolt\Extension\Bolt\FacebookComments;
 
 use Bolt\Extensions\Snippets\Location as SnippetLocation;
 
