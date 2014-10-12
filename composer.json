@@ -1,6 +1,6 @@
 {
     "name": "bolt/facebookcomments",
-    "description": "",
+    "description": "n extension to place Facebook comment threads on your site, when using {{ facebookcomments() }} in your templates.",
     "type": "bolt-extension",
     "keywords": [],
     "require": {
