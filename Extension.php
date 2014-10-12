@@ -12,7 +12,7 @@ class Extension extends \Bolt\BaseExtension
         return "Facebook Comments";
     }
 
-    function initialize()
+    public function initialize()
     {
         // Nothing here.. Note: This extension defines the snippets and functions in getSnippets() and getFunctions()
     }
@@ -21,7 +21,7 @@ class Extension extends \Bolt\BaseExtension
      * Return the available Snippets
      * @return array
      */
-    function getSnippets()
+    public function getSnippets()
     {
         return array(
             array(SnippetLocation::END_OF_BODY, 'facebookScript')
@@ -39,14 +39,12 @@ class Extension extends \Bolt\BaseExtension
         );
     }
 
-
-
     /**
      * Callback for snippet 'facebookscript'.
      *
      * @return string
      */
-    function facebookScript()
+    public function facebookScript()
     {
 
         $html = <<< EOM
@@ -59,15 +57,15 @@ class Extension extends \Bolt\BaseExtension
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 EOM;
+
         return $html;
 
     }
 
-
     /**
      * Callback for Twig function 'facebookcomments'.
      */
-    function facebookComments($title="")
+    public function facebookComments($title = "")
     {
 
         if (empty($this->config['width'])) { $this->config['width'] = "470"; }
@@ -83,9 +81,4 @@ EOM;
 
     }
 
-
-
-
 }
-
-
