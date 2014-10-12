@@ -1,40 +1,18 @@
 <?php
 // Facebook Like Extension for Bolt
 
-namespace FacebookComments;
+namespace Bolt\Extension\Bolt\FacebookComments;
 
 use Bolt\Extensions\Snippets\Location as SnippetLocation;
 
 class Extension extends \Bolt\BaseExtension
 {
-
-    function info()
-    {
-
-        $data = array(
-            'name' =>"Facebook Comments",
-            'description' => "An extension to place Facebook comment threads on your site, when using <code>{{ facebookcomments() }}</code> in your templates.",
-            'author' => "Bob den Otter",
-            'link' => "http://bolt.cm",
-            'version' => "1.1",
-            'required_bolt_version' => "1.0",
-            'highest_bolt_version' => "1.0",
-            'type' => "Twig function",
-            'first_releasedate' => "2012-10-10",
-            'latest_releasedate' => "2013-01-28",
-            'allow_in_user_content' => true,
-        );
-
-        return $data;
-
-    }
-
     public function getName()
     {
         return "Facebook Comments";
     }
 
-    function initialize()
+    public function initialize()
     {
         // Nothing here.. Note: This extension defines the snippets and functions in getSnippets() and getFunctions()
     }
@@ -43,7 +21,7 @@ class Extension extends \Bolt\BaseExtension
      * Return the available Snippets
      * @return array
      */
-    function getSnippets()
+    public function getSnippets()
     {
         return array(
             array(SnippetLocation::END_OF_BODY, 'facebookScript')
@@ -61,14 +39,12 @@ class Extension extends \Bolt\BaseExtension
         );
     }
 
-
-
     /**
      * Callback for snippet 'facebookscript'.
      *
      * @return string
      */
-    function facebookScript()
+    public function facebookScript()
     {
 
         $html = <<< EOM
@@ -81,15 +57,15 @@ class Extension extends \Bolt\BaseExtension
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 EOM;
+
         return $html;
 
     }
 
-
     /**
      * Callback for Twig function 'facebookcomments'.
      */
-    function facebookComments($title="")
+    public function facebookComments($title = "")
     {
 
         if (empty($this->config['width'])) { $this->config['width'] = "470"; }
@@ -105,9 +81,4 @@ EOM;
 
     }
 
-
-
-
 }
-
-
