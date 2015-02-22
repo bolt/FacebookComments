@@ -1,6 +1,6 @@
 {
     "name": "bolt/facebookcomments",
-    "description": "",
+    "description": "The 'Facebook Comments' extension inserts a Facebook comment thread in your templates.",
     "type": "bolt-extension",
     "keywords": [],
     "require": {
