@@ -2,9 +2,9 @@
     "name": "bolt/facebookcomments",
     "description": "The 'Facebook Comments' extension inserts a Facebook comment thread in your templates.",
     "type": "bolt-extension",
-    "keywords": [],
+    "keywords": ["facebook", "comments", "discussion"],
     "require": {
-        "bolt/bolt": ">=2.0.0,<3.0.0"
+        "bolt/bolt": "^3.0"
     },
     "license": "MIT",
     "authors": [
@@ -14,11 +14,11 @@
         }
     ],
     "autoload": {
-        "files": [
-            "init.php"
-        ],
         "psr-4": {
-            "FacebookComments\\": ""
+            "Bolt\\Extension\\Bolt\\FacebookComments\\": "src/"
         }
+    },
+    "extra": {
+        "bolt-class": "Bolt\\Extension\\Bolt\\FacebookComments\\FacebookCommentsExtension"
     }
 }
