@@ -1,2 +1,5 @@
 # This extension has no settings yet.
-
+width: '100%'
+num_posts: 5
+colorscheme: 'light'
+order_by: 'social'
