@@ -1,4 +1,5 @@
-# This extension has no settings yet.
+# These are the settings for FacebookComments.
+
 width: '100%'
 num_posts: 5
 colorscheme: 'light'

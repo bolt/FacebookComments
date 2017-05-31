@@ -24,7 +24,6 @@ class FacebookCommentsExtension extends SimpleExtension
         ];
     }
 
-
     /**
      * Callback for snippet 'facebookscript'.
      *
@@ -54,13 +53,11 @@ EOM;
 
     }
 
-
     /**
      * Callback for Twig function 'facebookcomments'.
      */
     function facebookComments($link = '')
     {
-
         $this->facebookScript();
 
         $config = $this->getConfig();
@@ -71,10 +68,7 @@ EOM;
             $link =$app['resources']->getUrl('hosturl').$link;
         }
 
-        $html
-              = <<< EOM
-        <div class="fb-comments" id="fb_comments" data-href="%url%" data-numposts="%num_posts%" data-width="%width%" data-colorscheme="%colorscheme%" data-order-by="%order_by%"></div>
-EOM;
+        $html = '<div class="fb-comments" id="fb_comments" data-href="%url%" data-numposts="%num_posts%" data-width="%width%" data-colorscheme="%colorscheme%" data-order-by="%order_by%"></div>';
         $html = str_replace("%num_posts%", $config['num_posts'], $html);
         $html = str_replace("%width%", $config['width'], $html);
         $html = str_replace("%colorscheme%", $config['colorscheme'], $html);
@@ -95,10 +89,7 @@ EOM;
             $link =$app['resources']->getUrl('hosturl').$link;
         }
 
-        $html
-              = <<< EOM
-        <a href="%url%#fb_comments"><span class="fb-comments-count" data-href="%url%"></span> Comments</a>
-EOM;
+        $html = '<a href="%url%#fb_comments"><span class="fb-comments-count" data-href="%url%"></span> Comments</a>';
         $html = str_replace("%url%", $link, $html);
 
         return new \Twig_Markup($html, 'UTF-8');
@@ -107,12 +98,10 @@ EOM;
     protected function getDefaultConfig()
     {
         return [
-            'width'       => '470',
-            'num_posts'   => '1',
+            'width'       => '100%',
+            'num_posts'   => '5',
             'colorscheme' => 'light',
             'order_by'    => 'social',
         ];
     }
-
-
 }
